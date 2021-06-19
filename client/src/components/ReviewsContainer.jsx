@@ -62,6 +62,7 @@ function ReviewsContainer (props) {
       <ReviewSorter
         setStarRatingFilter={setStarRatingFilter}
         totalRatings={totalRatings}
+        averageRating={props.averageRating}
       />
       <ReviewList
         id={props.id}

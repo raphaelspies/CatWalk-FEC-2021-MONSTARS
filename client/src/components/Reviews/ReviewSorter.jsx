@@ -14,13 +14,18 @@ const ReviewDivContainer = styled.div`
 `;
 
 const SingleLine = styled.div`
-display: inline-flex;
-flex-direction: row;
-flex-wrap: nowrap;
-min-width: 300px;
-align-items: center;
-justify-content: center;
-line-height: 1px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-width: 300px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1px;
+`;
+
+const OversizedH = styled.h1`
+  font-size: 500%;
+  font-weight: bold;
 `;
 
 export default function ReviewSorter (props) {
@@ -57,6 +62,10 @@ export default function ReviewSorter (props) {
   return (
     starRatings ?
     <ReviewDivContainer>
+      <Header> Ratings & Reviews </Header>
+      <br/>
+      <OversizedH> {props.averageRating} <StarRating rating={props.averageRating}/></OversizedH>
+      <br />
       <Header> Sort by Rating: </Header>
       {starRatings}
       <br></br>

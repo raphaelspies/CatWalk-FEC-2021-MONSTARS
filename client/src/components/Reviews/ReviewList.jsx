@@ -34,6 +34,7 @@ export default function ReviewList(props) {
     <DefaultWidth>
         <Header> {props.reviews.length} Reviews, sorted by <Dropdown sortBy={sortBy} changeSortOrder={changeSortOrder}/> </Header>
         {!props.reviews && <DefaultWidth> No Reviews Yet! </DefaultWidth>}
+        <br/>
         { props.reviews
           .sort(compareForSort(sortBy))
           .filter(props.currentStarRating ? review => review.rating === props.currentStarRating : review => review)
