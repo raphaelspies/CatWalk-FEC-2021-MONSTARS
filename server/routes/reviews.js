@@ -32,4 +32,32 @@ reviews
     })
   })
 
+reviews
+  .route('/:review_id/report')
+  .put((req, res) => {
+    let product_id = req.params.review_id;
+    return API.reportReview(review_id)
+    console.log(`${req.params.review_id} reported`)
+    .then(data => {
+      res.status(200).send(data)
+    })
+    .catch(err => {
+      res.status(400).send('error reporting review: ', err)
+    })
+  })
+
+  reviews
+  .route('/:review_id/helpful')
+  .put((req, res) => {
+    let product_id = req.params.review_id;
+    return API.updateHelpful(review_id)
+    console.log(`${req.params.review_id} upvoted helpful`)
+    .then(data => {
+      res.status(200).send(data)
+    })
+    .catch(err => {
+      res.status(400).send('error upvoting review: ', err)
+    })
+  })
+
   module.exports = reviews;

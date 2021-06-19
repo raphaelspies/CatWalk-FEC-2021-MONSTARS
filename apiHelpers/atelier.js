@@ -95,5 +95,36 @@ module.exports = {
       return err
     })
   },
+
+  reportReview: function(review_id) {
+    return axios({
+      method: 'PUT',
+      url: `${endpoint}/reviews/${review_id}/report`,
+      headers: { 'Authorization': credentials.TOKEN },
+    })
+    .then(res => {
+      return res.data
+    })
+    .catch(err => {
+      console.log(err)
+      return err
+    })
+  },
+
+  updateHelpful: function(review_id) {
+    return axios({
+      method: 'PUT',
+      url: `${endpoint}/reviews/${review_id}/report`,
+      headers: { 'Authorization': credentials.TOKEN },
+    })
+    .then(res => {
+      return res.data
+    })
+    .catch(err => {
+      console.log(err)
+      return err
+    })
+  },
+
 };
 
