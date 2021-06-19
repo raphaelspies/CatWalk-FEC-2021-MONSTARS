@@ -41,7 +41,6 @@ function ReviewsContainer (props) {
       newTotalRatings[review.rating] = newTotalRatings[review.rating] + 1;
 
     })
-    console.log(newTotalRatings);
     setTotalRatings(newTotalRatings);
     setRatingsLoaded(true);
   }

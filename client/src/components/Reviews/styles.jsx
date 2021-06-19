@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const DefaultWidth = styled.div`
   min-width: 600px;
+  min-height: 800px;
   position: left;
 `;
 
